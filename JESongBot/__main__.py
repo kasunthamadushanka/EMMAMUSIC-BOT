@@ -22,6 +22,7 @@ My commands👇
 - /song <song name>: download songs via Youtube
 - /saavn <song name>: download songs via JioSaavn
 - /deezer <song name>: download songs via Deezer
+- Send youtube url to my pm for download it on audio format
 
 A bot by @Infinity_BOTs
 """
