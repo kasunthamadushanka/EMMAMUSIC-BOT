@@ -6,3 +6,4 @@ Pyrogram
 Tgcrypto
 asyncio
 wget
+aiofiles
