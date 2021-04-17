@@ -5,3 +5,4 @@ aiohttp
 Pyrogram
 Tgcrypto
 asyncio
+wget
