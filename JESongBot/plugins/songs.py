@@ -5,7 +5,7 @@ import os
 import requests
 import aiohttp
 import youtube_dl
-
+from pytube import YouTube
 from JESongBot import Jebot as app
 from pyrogram import filters, Client
 from youtube_search import YoutubeSearch
@@ -41,7 +41,7 @@ def song(client, message):
         duration = results[0]["duration"]
         url_suffix = results[0]["url_suffix"]
         views = results[0]["views"]
-
+        yt = YouTube(link)
     except Exception as e:
         m.edit(
             "❌ Found Nothing.\n\nTry another keywork or maybe spell it properly."
@@ -59,7 +59,7 @@ def song(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        s = message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
+        s = message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur, performer=str(yt.author))
         m.delete()
     except Exception as e:
         m.edit('❌ Error')
