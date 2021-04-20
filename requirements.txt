@@ -8,3 +8,4 @@ asyncio
 wget
 aiofiles
 OpenCC
+pytube
