@@ -6,6 +6,12 @@
 
 Reach me on Telegram [Song Bot 🎵](https://t.me/jesongbot)
 
+## Features
+
+- YouTube Download
+- Deezer Download
+- JioSaavn Download
+
 ## How To Host
 
 The easiest way to deploy this Song Bot
