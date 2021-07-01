@@ -24,13 +24,10 @@ from pyrogram.errors import UserAlreadyParticipant
 
 SUDO_USERS = 1414582599
 
-@bot.on_message(filters.command(["broadcast"]))
+@bot.on_message(filters.command("broadcast") & filters.user(SUDO_USERS))
 async def broadcast(_, message: Message):
-    sent=0
-    failed=0
-    if message.from_user.id not in SUDO_USERS:
-        return
-    else:
+        sent=0
+        failed=0   
         wtf = await message.reply("`Starting a broadcast...`")
         if not message.reply_to_message:
             await wtf.edit("`Please reply to a message to broadcast!`")
