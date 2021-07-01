@@ -55,11 +55,11 @@ async def start(client, message):
                 ]
             ]
         )
+        await message.reply(pm_start_text.format(name, user_id), reply_markup=btn)
     else:
-        btn = None
-        pm_start_text = "Heya [{}](tg://user?id={}), Song Bot is online ✅"
-    await message.reply(pm_start_text.format(name, user_id), reply_markup=btn)
-
+        start_text = "Heya [{}](tg://user?id={}), Song Bot is online ✅"
+        await message.reply(start_text.format(name, user_id))
+    
 @bot.on_message(filters.command("help") & ~filters.edited)
 async def start(client, message):
     await message.reply(help_text)
