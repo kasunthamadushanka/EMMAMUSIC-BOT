@@ -1,5 +1,18 @@
-# Infinity BOTs <https://t.me/Infinity_BOTs>
-# @ImJanindu
+#    Copyright (C) 2021 - Infinity Bots
+#    This programme is a part of JEBotZ
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 
 from pyrogram.types.bots_and_keyboards import reply_keyboard_markup
 from JESongBot.plugins import *
@@ -21,7 +34,7 @@ I can download HQ songs from YouTube Music
 
 **Syntax** - `/song [song name]`
 
-A bot by *"@Infinity_BOTs**
+A bot by **@Infinity_BOTs**
 """
 
 @bot.on_message(filters.command("start") & ~filters.edited)
