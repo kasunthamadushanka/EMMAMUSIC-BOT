@@ -21,7 +21,6 @@ from pyrogram.types import Dialog
 from pyrogram.types import Chat
 from pyrogram.types import Message
 from pyrogram.errors import UserAlreadyParticipant
-from config import Config
 
 SUDO_USERS = 1414582599
 
