@@ -5,29 +5,26 @@ from pyrogram.types.bots_and_keyboards import reply_keyboard_markup
 from JESongBot.plugins import *
 from pyrogram import idle, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from JESongBot import Jebot as app
+from JESongBot import bot
 from JESongBot import LOGGER
 
 pm_start_text = """
-Heya [{}](tg://user?id={}), I'm Song Downloader Bot 🎵
+Heya [{}](tg://user?id={}), I'm Song Bot 🎵
 
-Do /help for know my commands
+Do /help for know about me!
 
-A bot by @Infinity_BOTs
+A bot by **@Infinity_BOTs**
 """
 
 help_text = """
-My commands👇
+I can download HQ songs from YouTube Music
 
-- /song <song name>: download songs via Youtube
-- /saavn <song name>: download songs via JioSaavn
-- /deezer <song name>: download songs via Deezer
-- Send youtube url to my pm for download it on audio format
+**Syntax** - `/song [song name]`
 
-A bot by @Infinity_BOTs
+A bot by *"@Infinity_BOTs**
 """
 
-@app.on_message(filters.command("start"))
+@bot.on_message(filters.command("start") & ~filters.edited)
 async def start(client, message):
     chat_id = message.chat.id
     user_id = message.from_user["id"]
@@ -40,7 +37,7 @@ async def start(client, message):
                         text="Source", url="https://github.com/ImJanindu/JESongBot"
                     ),
                     InlineKeyboardButton(
-                        text="Dev", url="https://t.me/ImJanindu"
+                        text="Dev", url="https://t.me/JEBotZ"
                     )
                 ]
             ]
@@ -49,10 +46,10 @@ async def start(client, message):
         btn = None
     await message.reply(pm_start_text.format(name, user_id), reply_markup=btn)
 
-@app.on_message(filters.command("help"))
+@bot.on_message(filters.command("help") & ~filters.edited)
 async def start(client, message):
     await message.reply(help_text)
 
-app.start()
+bot.start()
 LOGGER.info("JESongBot is online.")
 idle()
