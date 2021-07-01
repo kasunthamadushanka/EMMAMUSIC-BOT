@@ -35,7 +35,7 @@ def song(client, message):
     print(query)
     shed = message.reply("🔎 Finding the song...")
     ydl_opts = {
-       "format": "bestaudio/best",
+       "format": "bestaudio[ext=m4a]",
        "geo-bypass": True,
        "nocheckcertificate": True,
        "outtmpl": "downloads/%(id)s.%(ext)s",
