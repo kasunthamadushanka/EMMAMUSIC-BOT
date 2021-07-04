@@ -27,7 +27,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 @bot.on_message(filters.command("song") & ~filters.edited)
-def song(client, message):
+async def song(client, message):
 
     query = ''
     for i in message.command[1:]:
