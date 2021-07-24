@@ -53,7 +53,7 @@ async def song(_, message):
     if len(message.command) < 2:
        return await message.reply("**Usage:**\n - `/song [query]`")
     query = message.text.split(None, 1)[1]
-    shed = message.reply("🔎 Finding the song...")
+    shed = await message.reply("🔎 Finding the song...")
     ydl_opts = {
        "format": "bestaudio[ext=m4a]",
        "geo-bypass": True,
@@ -75,12 +75,12 @@ async def song(_, message):
         views = results[0]["views"]
         channel = results[0]["channel"]
     except Exception as e:
-        shed.edit(
+        await shed.edit(
             "❌ Found Nothing.\n\nTry another keywork or maybe spell it properly."
         )
         print(str(e))
         return
-    shed.edit("📥 Downloading...")
+    await shed.edit("📥 Downloading...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -91,11 +91,11 @@ async def song(_, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        shed.edit("📤 Uploading...")
-        s = message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur, performer=channel)
-        shed.delete()
+        await shed.edit("📤 Uploading...")
+        s = await message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur, performer=channel)
+        await shed.delete()
     except Exception as e:
-        shed.edit("❌ Error")
+        await shed.edit("❌ Error")
         print(e)
 
     try:
