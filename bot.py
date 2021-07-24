@@ -42,12 +42,6 @@ async def start(_, message):
                                             "⛑ Dev ⛑", url="https://t.me/kasu_bro"),
                                         InlineKeyboardButton(
                                             "📣 Channel 📣", url="https://t.me/epusthakalaya_bots")
-                                    ]],
-                               [[
-                                        InlineKeyboardButton(
-                                            "⛑ Dev ⛑", url="https://t.me/kasu_bro"),
-                                        InlineKeyboardButton(
-                                            "📣 Channel 📣", url="https://t.me/epusthakalaya_bots")
                                     ]]
                             ))
    else:
@@ -57,7 +51,7 @@ async def start(_, message):
 @bot.on_message(filters.command("song") & ~filters.edited)
 async def song(_, message):
     if len(message.command) < 2:
-       return await message.reply("**Usage:**\n - `/song [query]`")
+       return await message.reply("**Usage:**\n - `Eg:- /song Bad Habits`")
     query = message.text.split(None, 1)[1]
     shed = await message.reply("🔎 Finding the song...")
     ydl_opts = {
