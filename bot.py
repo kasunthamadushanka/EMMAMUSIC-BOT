@@ -39,9 +39,9 @@ async def start(_, message):
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
-                                            "⛑ Dev ⛑", url="https://t.me/epusthakalaya_Bots"),
+                                            "⛑ Dev ⛑", url="https://t.me/kasu_bro"),
                                         InlineKeyboardButton(
-                                            "💾 Source 💾", url="https://github.com/kasunthamadushanka/EMMAMUSIC-ROBOT")
+                                            "📣 Channel 📣", url="https://t.me/epusthakalaya_bots")
                                     ]]
                             ))
    else:
