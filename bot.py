@@ -35,9 +35,15 @@ bot = Client(
 @bot.on_message(filters.command("start") & ~filters.edited)
 async def start(_, message):
    if message.chat.type == 'private':
-       await message.reply("**Hey There, I'm a ✨ 𝐄𝐌𝐌𝐀 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓 ✨.\n A bot by @epusthakalaya_Bots.\nUsage:** `/song [query]`",   
+       await message.reply("**Hey There, I'm a ✨ 𝐄𝐌𝐌𝐀 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓 ✨.\n A bot by @epusthakalaya_Bots.\nUsage:** `Eg:- /song Bad Habits`",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
+                                        InlineKeyboardButton(
+                                            "⛑ Dev ⛑", url="https://t.me/kasu_bro"),
+                                        InlineKeyboardButton(
+                                            "📣 Channel 📣", url="https://t.me/epusthakalaya_bots")
+                                    ]],
+                               [[
                                         InlineKeyboardButton(
                                             "⛑ Dev ⛑", url="https://t.me/kasu_bro"),
                                         InlineKeyboardButton(
