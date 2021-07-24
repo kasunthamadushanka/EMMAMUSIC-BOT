@@ -35,17 +35,17 @@ bot = Client(
 @bot.on_message(filters.command("start") & ~filters.edited)
 async def start(_, message):
    if message.chat.type == 'private':
-       await message.reply("**Hey There, I'm a song downloader bot. A bot by @Infinity_Bots.\nUsage:** `/song [query]`",   
+       await message.reply("**Hey There, I'm a ✨ 𝐄𝐌𝐌𝐀 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓 ✨. A bot by @epusthakalaya_Bots.\nUsage:** `/song [query]`",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
-                                            "Dev", url="https://t.me/Infinity_Bots"),
+                                            "⛑ Dev ⛑", url="https://t.me/epusthakalaya_Bots"),
                                         InlineKeyboardButton(
-                                            "Source", url="https://github.com/imjanindu/jesongbot")
+                                            "💾 Source 💾", url="https://github.com/kasunthamadushanka/EMMAMUSIC-ROBOT")
                                     ]]
                             ))
    else:
-      await message.reply("**Song downloader bot is online ✨**")
+      await message.reply("**𝐄𝐌𝐌𝐀 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓  is online ✨**")
 
 
 @bot.on_message(filters.command("song") & ~filters.edited)
@@ -86,7 +86,7 @@ async def song(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = "@Infinity_Bots"
+        rep = "@epusthakalaua_bots"
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
