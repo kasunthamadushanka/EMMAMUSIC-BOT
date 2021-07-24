@@ -105,5 +105,4 @@ async def song(_, message):
         print(e)
 
 bot.start()
-LOGGER.info("𝐄𝐌𝐌𝐀 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓 Was Deployed Successfully! ✅")
 idle()
