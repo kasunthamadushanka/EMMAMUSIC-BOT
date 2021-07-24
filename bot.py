@@ -21,14 +21,14 @@ import youtube_dl
 from pyrogram import filters, Client, idle
 from youtube_search import YoutubeSearch
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from config import Config
+from config import import API_ID, API_HASH, BOT_TOKEN
 
 # logging
 bot = Client(
    "Song Downloader",
-   api_id=Config.APP_ID,
-   api_hash=Config.API_HASH,
-   bot_token=Config.TG_BOT_TOKEN,
+   api_id=API_ID,
+   api_hash=API_HASH,
+   bot_token=BOT_TOKEN,
 )
 
 
